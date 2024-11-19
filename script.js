@@ -1,7 +1,7 @@
 // Array to store video data
 let videoList = [
     { title: "Leg Day Workout", src: "lv_0_20241119034905.mp4" },
-    { title: "Best Glute Exercises", src: "reel2.mp4" },
+    { title: "Best Glute Exercises", src: "lv_0_20241119040806.mp4" },
     { title: "Full-Body Stretch Routine", src: "reel3.mp4" },
 ];
 
