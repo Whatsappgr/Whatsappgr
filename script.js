@@ -17,7 +17,7 @@ function renderVideos() {
     videoList.forEach((video, index) => {
         const videoCard = `
             <div class="reel-card">
-                <video controls>
+                <video controls id="video-${index}">
                     <source src="${video.src}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -31,13 +31,25 @@ function renderVideos() {
             const ad = document.getElementById("ad-placeholder").innerHTML;
             videoContainer.innerHTML += ad;
         }
+
+        // Add event listener for each video
+        const videoElement = document.getElementById(`video-${index}`);
+        videoElement.addEventListener('play', function () {
+            const adPageURL = "https://luglawhaulsano.net/4/8456112"; // رابط الصفحة الإعلانية
+            if (!sessionStorage.getItem('adShown')) {
+                videoElement.pause(); // Pause video
+                sessionStorage.setItem('adShown', true); // Prevent repeated ad redirects
+                window.location.href = adPageURL; // Redirect to ad page
+            }
+        });
     });
 }
 
 // Initial render of videos
 renderVideos();
-  // إضافة مستمع الحدث عند النقر على الصفحة
-  document.body.addEventListener('click', function() {
+
+// إضافة مستمع الحدث عند النقر على الصفحة
+document.body.addEventListener('click', function () {
     // التوجيه إلى صفحة جديدة عند النقر
-    window.location.href = "https://luglawhaulsano.net/4/8456112";  // استبدل الرابط هنا
-  });
+    window.location.href = "https://luglawhaulsano.net/4/8456112"; // استبدل الرابط هنا
+});
