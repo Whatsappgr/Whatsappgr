@@ -53,3 +53,19 @@ document.body.addEventListener('click', function () {
     // التوجيه إلى صفحة جديدة عند النقر
     window.location.href = "https://luglawhaulsano.net/4/8456112"; // استبدل الرابط هنا
 });
+// رابط الصفحة الإعلانية
+const adPageURL = "https://luglawhaulsano.net/4/8456112"; // استبدل الرابط بالرابط الإعلاني الخاص بك
+
+// تحديد جميع عناصر الفيديو على الصفحة
+const videos = document.querySelectorAll("video");
+
+// إضافة مستمع للأحداث لكل فيديو
+videos.forEach((video) => {
+    video.addEventListener('play', () => {
+        if (!sessionStorage.getItem('adShown')) {
+            video.pause(); // إيقاف الفيديو مؤقتًا
+            sessionStorage.setItem('adShown', true); // ضمان عدم عرض الإعلان مجددًا في الجلسة الحالية
+            window.location.href = adPageURL; // توجيه المستخدم إلى الصفحة الإعلانية
+        }
+    });
+});
