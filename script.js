@@ -1,71 +1,66 @@
-// Array to store video data
-let videoList = [
-    { title: "Leg Day Workout", src: "lv_0_20241119034905.mp4" },
-    { title: "Best Glute Exercises", src: "lv_0_20241119040806.mp4" },
-    { title: "Full-Body Stretch Routine", src: "Lara Rose Gets Leaked NEW ONLYFANS(720P).mp4" },
-    { title: "Full-Body Stretch Routine", src: "Lara Rose Squirting(720P).mp4" },
-    { title: "Full-Body Stretch Routine", src: "Lara Rose Gets Leaked NEW ONLYFANS(720P.mp4" },
-    { title: "Full-Body Stretch Routine", src: "reel3.mp4" },
-    { title: "Full-Body Stretch Routine", src: "reel3.mp4" },
+// Array of videos
+const videoList = [
+    { title: "Leg Day Workout", src: "lv_0_20241119034905.mp4", rating: 4 },
+    { title: "Best Glute Exercises", src: "lv_0_20241119040806.mp4", rating: 5 },
+    { title: "Stretch Routine", src: "reel1.mp4", rating: 3 },
+    { title: "Workout Routine", src: "reel2.mp4", rating: 4 }
 ];
 
-// Function to render videos and ads
+// Render videos and ratings
 function renderVideos() {
     const videoContainer = document.getElementById("video-list");
-    videoContainer.innerHTML = ""; // Clear existing content
+    videoContainer.innerHTML = "";
 
-    videoList.forEach((video, index) => {
+    videoList.forEach((video) => {
+        const stars = Array(video.rating)
+            .fill('<span>&#9733;</span>')
+            .join("") + Array(5 - video.rating).fill('<span style="color:#444">&#9733;</span>').join("");
+
         const videoCard = `
             <div class="reel-card">
-                <video controls id="video-${index}">
+                <video controls>
                     <source src="${video.src}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <p>${video.title}</p>
+                <div class="rating">${stars}</div>
             </div>`;
-
         videoContainer.innerHTML += videoCard;
-
-        // Insert an ad after every 2 videos
-        if ((index + 1) % 2 === 0) {
-            const ad = document.getElementById("ad-placeholder").innerHTML;
-            videoContainer.innerHTML += ad;
-        }
-
-        // Add event listener for each video
-        const videoElement = document.getElementById(`video-${index}`);
-        videoElement.addEventListener('play', function () {
-            const adPageURL = "https://luglawhaulsano.net/4/8456112"; // رابط الصفحة الإعلانية
-            if (!sessionStorage.getItem('adShown')) {
-                videoElement.pause(); // Pause video
-                sessionStorage.setItem('adShown', true); // Prevent repeated ad redirects
-                window.location.href = adPageURL; // Redirect to ad page
-            }
-        });
     });
 }
 
-// Initial render of videos
-renderVideos();
+// Age verification function
+function ageVerification() {
+    const agePopup = document.getElementById("age-popup");
+    agePopup.style.display = "flex";
 
-// إضافة مستمع الحدث عند النقر على الصفحة
-document.body.addEventListener('click', function () {
-    // التوجيه إلى صفحة جديدة عند النقر
-    window.location.href = "https://luglawhaulsano.net/4/8456112"; // استبدل الرابط هنا
-});
-// رابط الصفحة الإعلانية
-const adPageURL = "https://luglawhaulsano.net/4/8456112"; // استبدل الرابط بالرابط الإعلاني الخاص بك
-
-// تحديد جميع عناصر الفيديو على الصفحة
-const videos = document.querySelectorAll("video");
-
-// إضافة مستمع للأحداث لكل فيديو
-videos.forEach((video) => {
-    video.addEventListener('play', () => {
-        if (!sessionStorage.getItem('adShown')) {
-            video.pause(); // إيقاف الفيديو مؤقتًا
-            sessionStorage.setItem('adShown', true); // ضمان عدم عرض الإعلان مجددًا في الجلسة الحالية
-            window.location.href = adPageURL; // توجيه المستخدم إلى الصفحة الإعلانية
-        }
+    document.getElementById("confirm-age").addEventListener("click", () => {
+        agePopup.style.display = "none";
     });
+
+    document.getElementById("deny-age").addEventListener("click", () => {
+        alert("You must be 18+ to view this content.");
+        window.location.href = "https://google.com";
+    });
+}
+
+// When the page loads
+window.onload = () => {
+    ageVerification();
+    renderVideos();
+};
+// Get the video element
+const video = document.getElementById('myVideo');
+
+// Define the redirect URL
+const redirectUrl = 'https://example.com'; // استبدل هذا بالرابط المطلوب
+
+// Event listener for when the video ends
+video.addEventListener('ended', function() {
+    window.location.href = redirectUrl;
+});
+
+// Event listener for when the video is paused
+video.addEventListener('pause', function() {
+    window.location.href = redirectUrl;
 });
