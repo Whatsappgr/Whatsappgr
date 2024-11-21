@@ -7,35 +7,45 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  
+
+    <!-- Popup for Age Confirmation -->
+    <div id="age-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Age Verification</h2>
+            <p>Are you 18 years or older?</p>
+            <button id="confirm-age">Yes, I'm 18+</button>
+            <button id="deny-age">No</button>
+        </div>
+    </div>
 
     <!-- Header Section -->
     <header>
-        <div class="logo">ReelsHub</div>
+        <div class="logo">
+            <img src="logo-dark.png" alt="ReelsHub Logo"> <!-- Replace with actual logo -->
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#reels">Reels</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="admin.html">Admin</a></li> <!-- Admin Panel -->
+                <li><a href="admin.html">..</a></li>
             </ul>
         </nav>
     </header>
+    
 
     <!-- Main Content -->
     <main>
-        <section id="reels" class="vertical-videos">
+        <section id="reels" class="video-section">
             <h2>Trending Reels</h2>
             <div id="video-list">
-                <!-- Videos and Ads will be inserted here by JavaScript -->
+                <!-- Videos and Ratings will be added dynamically -->
             </div>
         </section>
     </main>
 
-    <!-- Advertisement Placeholder -->
-    <section id="ad-placeholder" style="display: none;">
-       
-    </section>
-
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 ReelsHub. All rights reserved.</p>
     </footer>
