@@ -3,7 +3,7 @@ const videoList = [
     { title: "Leg Day Workout", src: "moruhiko-20241209-0004.mp4", rating: 4 },
     { title: "Best Glute Exercises", src: "lv_0_20241119040806.mp4", rating: 5 },
     { title: "Stretch Routine", src: "lv_0_20241119034905.mp4", rating: 3 },
-    { title: "Workout Routine", src: "reel2.mp4", rating: 4 }
+    { title: "Workout Routine", src: "alex_mucci-20241210-0001.mp4", rating: 4 }
 ];
 
 // Render videos and ratings
