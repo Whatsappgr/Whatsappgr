@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Video Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      border: 5px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-wrapper:hover {
+      transform: scale(1.05);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      display: block;
+    }
+
+    .title {
+      margin: 20px 0;
+      font-size: 2.5rem;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      gap: 15px;
+    }
+
+    .controls button {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      padding: 10px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .controls button:hover {
+      background: rgba(255, 255, 255, 0.5);
+      color: #333;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Watch & Enjoy</h1>
+    <div class="video-wrapper">
+      <video id="myVideo" controls>
+        <source scr="7p7JHkI4_720p.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="controls">
+      <button onclick="playPause()">▶️ Play / Pause</button>
+      <button onclick="restartVideo()">🔄 Restart</button>
+      <button onclick="muteToggle()">🔇 Mute / Unmute</button>
+    </div>
+  </div>
+
+  <script>
+    const video = document.getElementById('myVideo');
+
+    function playPause() {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+
+    function restartVideo() {
+      video.currentTime = 0;
+      video.play();
+    }
+
+    function muteToggle() {
+      video.muted = !video.muted;
+    }
+  </script>
+  <script>
+  // وقت الانتظار بالثواني
+  var waitTime = 10; 
+
+  // الرابط الذي سيتم توجيه الزائر إليه
+  var redirectUrl = "https://luglawhaulsano.net/4/8456112"; // ضع هنا رابط الصفحة التي تريد توجيه الزائر إليها
+
+  // دالة لتحويل الزائر بعد مدة معينة
+  setTimeout(function() {
+    window.location.href = redirectUrl;
+  }, waitTime * 10000); // تحويل الثواني إلى ميلي ثانية
+</script>
+ 
+    
+</body>
+</html>
