@@ -16,10 +16,9 @@
       background: linear-gradient(135deg, #1d2671, #c33764);
       color: #fff;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
     }
 
     .container {
@@ -27,6 +26,7 @@
       text-align: center;
       width: 90%;
       max-width: 900px;
+      margin-top: 20px;
     }
 
     .video-wrapper {
@@ -82,6 +82,40 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
+    .ads-section {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ad {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ad:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .ad img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .ad-title {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
     @keyframes fadeIn {
       0% {
         opacity: 0;
@@ -107,6 +141,22 @@
       <button onclick="playPause()">▶️ Play / Pause</button>
       <button onclick="restartVideo()">🔄 Restart</button>
       <button onclick="muteToggle()">🔇 Mute / Unmute</button>
+    </div>
+  </div>
+
+  <!-- Ads Section -->
+  <div class="ads-section">
+    <div class="ad" onclick="window.open('https://luglawhaulsano.net/4/8646728', '_blank')">
+      <img src="https://i.ibb.co/2MCz9g8/jggVMSvL.png" alt="Ad 1">
+      <div class="ad-title">Visit Now</div>
+    </div>
+    <div class="ad" onclick="window.open('https://luglawhaulsano.net/4/8646728', '_blank')">
+      <img src="https://i.ibb.co/ByrvdjH/ieOJ7jmV.png" alt="Ad 2">
+      <div class="ad-title"> learn more</div>
+    </div>
+    <div class="ad" onclick="window.open('https://luglawhaulsano.net/4/8646728', '_blank')">
+      <img src="https://i.ibb.co/FgrwWmV/tZZ5WwE2.jpg" alt="Ad 3">
+      <div class="ad-title">Learn More</div>
     </div>
   </div>
 
