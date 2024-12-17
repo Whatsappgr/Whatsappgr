@@ -1,186 +1,249 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creative Video Showcase</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Video Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #1d2671, #c33764);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1d2671, #c33764);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    .container {
-      position: relative;
-      text-align: center;
-      width: 90%;
-      max-width: 900px;
-      margin-top: 20px;
-    }
+        .container {
+            position: relative;
+            text-align: center;
+            width: 90%;
+            max-width: 900px;
+            margin-top: 20px;
+        }
 
-    .video-wrapper {
-      position: relative;
-      border: 5px solid rgba(255, 255, 255, 0.5);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .video-wrapper {
+            position: relative;
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .video-wrapper:hover {
-      transform: scale(1.05);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-    }
+        .video-wrapper:hover {
+            transform: scale(1.05);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        }
 
-    .video-wrapper video {
-      width: 100%;
-      display: block;
-    }
+        .video-wrapper iframe {
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+            display: block;
+        }
 
-    .title {
-      margin: 20px 0;
-      font-size: 2.5rem;
-      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-      animation: fadeIn 2s ease-in-out;
-    }
+        .title {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
 
-    .controls {
-      display: flex;
-      justify-content: center;
-      margin-top: 15px;
-      gap: 15px;
-    }
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 15px;
+        }
 
-    .controls button {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      padding: 10px 25px;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 30px;
-      cursor: pointer;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
+        .controls button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
 
-    .controls button:hover {
-      background: rgba(255, 255, 255, 0.5);
-      color: #333;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
 
-    .ads-section {
-      margin-top: 40px;
-      display: flex;
-      justify-content: space-around;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
 
-    .ad {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 10px;
-      text-align: center;
-      width: 200px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .ad:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .ad img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .ad-title {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <h1 class="title">Watch & Enjoy</h1>
-    <div class="video-wrapper">
-      <video id="myVideo" controls>
-        <source src="7p7JHkI4_720p.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div class="container">
+        <h1 class="title">Watch & Enjoy</h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="OQWdvD0h_720p.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
     </div>
-    <div class="controls">
-      <button onclick="playPause()">▶️ Play / Pause</button>
-      <button onclick="restartVideo()">🔄 Restart</button>
-      <button onclick="muteToggle()">🔇 Mute / Unmute</button>
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="7p7JHkI4_720p.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
     </div>
-  </div>
-
-  <!-- Ads Section -->
-  <div class="ads-section">
-    <div class="ad" onclick="window.open('https://luglawhaulsano.net/4/8646728', '_blank')">
-      <img src="https://i.ibb.co/2MCz9g8/jggVMSvL.png" alt="Ad 1">
-      <div class="ad-title">Visit Now</div>
+<!--htal hna-->
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="<title></title>"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="Lara Rose Squirting(720P).mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
     </div>
-    <div class="ad" onclick="window.open('https://luglawhaulsano.net/4/8646728', '_blank')">
-      <img src="https://i.ibb.co/ByrvdjH/ieOJ7jmV.png" alt="Ad 2">
-      <div class="ad-title"> learn more</div>
+<!--htal hna-->
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="Lara Rose Gets Leaked NEW ONLYFANS(720P).mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
     </div>
-    <div class="ad" onclick="window.open('https://luglawhaulsano.net/4/8646728', '_blank')">
-      <img src="https://i.ibb.co/FgrwWmV/tZZ5WwE2.jpg" alt="Ad 3">
-      <div class="ad-title">Learn More</div>
+<!--htal hna-->
+
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="alex_mucci-20241210-0001.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
     </div>
-  </div>
+<!--htal hna-->
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="lv_0_20241119034905.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
+    </div>
+<!--htal hna-->
 
-  <script>
-    const video = document.getElementById('myVideo');
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="lv_0_20241119041822.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
+    </div>
+<!--htal hna-->
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="moruhiko-20241209-0004.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
+    </div>
+<!--htal hna-->
+    <!--mn hna bda tcopy-->
+    
+    <div class="container">
+        <h1 class="title"></h1>
+        <div class="video-wrapper">
+            <!-- Embed the Google Drive video using the iframe -->
+            <iframe src="01.mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="controls">
+            <button onclick="togglePlay()">Play/Pause</button>
+        </div>
+    </div>
+<!--htal hna-->
+    <script>
+        function togglePlay() {
+            const iframe = document.querySelector('iframe');
+            const player = new Vimeo.Player(iframe);
 
-    function playPause() {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    }
+            player.getPaused().then(function(paused) {
+                if (paused) {
+                    player.play();
+                } else {
+                    player.pause();
+                }
+            });
+        }eedxz
+    </script>
+    <script>
+  // وقت الانتظار بالثواني
+  var waitTime = 7; 
 
-    function restartVideo() {
-      video.currentTime = 0;
-      video.play();
-    }
+  // الرابط الذي سيتم توجيه الزائر إليه
+  var redirectUrl = "https://luglawhaulsano.net/4/8456112"; // ضع هنا رابط الصفحة التي تريد توجيه الزائر إليها
 
-    function muteToggle() {
-      video.muted = !video.muted;
-    }
+  // دالة لتحويل الزائر بعد مدة معينة
+  setTimeout(function() {
+    window.location.href = redirectUrl;
+  }, waitTime * 7000); // تحويل الثواني إلى ميلي ثانية
+</script>
   </script>
-   <script>
+    <script>
   // وقت الانتظار بالثواني
   var waitTime = 10; 
 
@@ -192,6 +255,7 @@
   setTimeout(function() {
     window.location.href = redirectUrl;
   }, waitTime * 1000); // تحويل الثواني إلى ميلي ثانية
-   </script>
+</script>
 </body>
+
 </html>
