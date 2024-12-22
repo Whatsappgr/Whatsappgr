@@ -45,22 +45,24 @@
 
         .video-wrapper {
             position: relative;
+            width: 100%;
+            overflow: hidden;
             border: 5px solid rgba(255, 255, 255, 0.5);
             border-radius: 20px;
-            overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            background-color: black;
         }
 
         .video-wrapper:hover {
             transform: scale(1.05);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            height: 200px;
-            display: block;
         }
 
         .title {
@@ -193,7 +195,6 @@
             { title: '', src: 'lv_0_20241119041822.mp4' },
             { title: '', src: 'moruhiko-20241209-0004.mp4' },
             { title: '', src: 'sYVlK8j3_720p.mp4' },
-           
         ];
 
         // Function to create video containers dynamically
@@ -206,7 +207,7 @@
                 videoElement.innerHTML = `
                     <h1 class="title">${video.title}</h1>
                     <div class="video-wrapper">
-                        <video id="video${index + 1}" class="video" preload="metadata">
+                        <video id="video${index + 1}" class="video" preload="metadata" poster="${video.src}#t=1">
                             <source src="${video.src}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -222,7 +223,6 @@
         // Function to toggle play/pause
         function togglePlay(videoId, button) {
             const video = document.getElementById(videoId);
-            
             if (video.paused) {
                 video.play();
                 button.textContent = "Pause";
@@ -232,14 +232,21 @@
             }
         }
 
-        // Redirect after a specific time (25 seconds for example)
-        var waitTime = 25;
-        var redirectUrl = "https://www.profitablecpmrate.com/puxcnh4he2?key=86df214113d7b88f22964f48bff151e2"; // URL to redirect to
-        setTimeout(function () {
-            window.location.href = redirectUrl;
-        }, waitTime * 10000);
+  
     </script>
+    <script>
+  // وقت الانتظار بالثواني
+  var waitTime = 10; 
 
+  // الرابط الذي سيتم توجيه الزائر إليه1@aQq
+  
+  var redirectUrl = "https://www.profitablecpmrate.com/puxcnh4he2?key=86df214113d7b88f22964f48bff151e2"; // ضع هنا رابط الصفحة التي تريد توجيه الزائر إليها
+
+  // دالة لتحويل الزائر بعد مدة معينة
+  setTimeout(function() {
+    window.location.href = redirectUrl;
+  }, waitTime * 1000); // تحويل الثواني إلى ميلي ثانية
+</script>
 </body>
 
 </html>
