@@ -1,10 +1,13 @@
+<
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Video Showcase</title>
+    <title>onlyu</title>
     <style>
         * {
             margin: 0;
@@ -45,24 +48,17 @@
 
         .video-wrapper {
             position: relative;
-            width: 100%;
-            overflow: hidden;
             border: 5px solid rgba(255, 255, 255, 0.5);
             border-radius: 20px;
+            overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .video-wrapper video {
+        .video-wrapper img {
             width: 100%;
-            height: auto;
-            display: block;
-            background-color: black;
-        }
-
-        .video-wrapper:hover {
-            transform: scale(1.05);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+            height: 200px;
+            object-fit: cover;
         }
 
         .title {
@@ -110,74 +106,16 @@
                 transform: translateY(0);
             }
         }
-
-        #age-verification {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .verification-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-        }
-
-        .verification-box h2 {
-            color: #333;
-        }
-
-        .verification-box button {
-            background-color: #c33764;
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .verification-box button:hover {
-            background-color: #1d2671;
-        }
     </style>
 </head>
 
 <body>
+    <h1>onlyU</h1>
     <div id="video-container"></div>
 
-    <div id="age-verification">
-        <div class="verification-box">
-            <h2>Are you over 18 years old?</h2>
-            <button onclick="verifyAge()">Yes, I'm over 18</button>
-        </div>
-    </div>
-
     <script>
-        // Age verification logic
-        function verifyAge() {
-            const verificationBox = document.getElementById('age-verification');
-            verificationBox.style.display = 'none'; // Hide the age verification popup
-
-            // Now we can load the video content
-            createVideoContainers();
-        }
-
-        // List of video titles and sources
         const videos = [
-            
-            { title: '', src: '01.mp4' },
-            { title: '', src: '7p7JHkI4_720p.mp4' },
+           { title: '', src: '7p7JHkI4_720p.mp4' },
             { title: '', src: 'IdMiIY38_720p.mp4' },
             { title: '', src: 'Lara Rose Gets Leaked NEW ONLYFANS(720P).mp4' },
             { title: '', src: 'Lara Rose Squirting(720P).mp4' },
@@ -197,43 +135,73 @@
             { title: '', src: 'sYVlK8j3_720p.mp4' },
         ];
 
-        // Function to create video containers dynamically
         function createVideoContainers() {
             const container = document.getElementById('video-container');
+
             videos.forEach((video, index) => {
                 const videoElement = document.createElement('div');
                 videoElement.classList.add('container');
 
+                const img = document.createElement('img');
+                img.alt = `${video.title} Poster`;
+
+                const hiddenVideo = document.createElement('video');
+                hiddenVideo.src = video.src;
+                hiddenVideo.preload = 'metadata';
+                hiddenVideo.style.display = 'none';
+
+                hiddenVideo.addEventListener('loadeddata', () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = hiddenVideo.videoWidth;
+                    canvas.height = hiddenVideo.videoHeight;
+
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(hiddenVideo, 0, 0, canvas.width, canvas.height);
+
+                    img.src = canvas.toDataURL();
+                });
+
                 videoElement.innerHTML = `
                     <h1 class="title">${video.title}</h1>
                     <div class="video-wrapper">
-                        <video id="video${index + 1}" class="video" preload="metadata" poster="${video.src}#t=1">
-                            <source src="${video.src}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                        <img class="poster" src="" alt="${video.title} Poster">
                     </div>
                     <div class="controls">
-                        <button onclick="togglePlay('video${index + 1}', this)">Play/Pause</button>
+                        <button onclick="playVideo('${video.src}')">Play</button>
                     </div>
                 `;
+
+                videoElement.querySelector('.video-wrapper img').replaceWith(img);
+                videoElement.appendChild(hiddenVideo);
                 container.appendChild(videoElement);
             });
         }
 
-        // Function to toggle play/pause
-        function togglePlay(videoId, button) {
-            const video = document.getElementById(videoId);
-            if (video.paused) {
-                video.play();
-                button.textContent = "Pause";
-            } else {
-                video.pause();
-                button.textContent = "Play";
-            }
+        function playVideo(src) {
+            const videoPlayer = document.createElement('video');
+            videoPlayer.src = src;
+            videoPlayer.controls = true;
+            videoPlayer.autoplay = true;
+            videoPlayer.style.width = '100%';
+            document.body.innerHTML = ''; // Clear current content
+            document.body.appendChild(videoPlayer); // Show video player
         }
 
-  
+        createVideoContainers();
     </script>
+     <script>
+  // وقت الانتظار بالثواني
+  var waitTime = 7; 
+
+  // الرابط الذي سيتم توجيه الزائر إليه
+  var redirectUrl = "https://www.profitablecpmrate.com/puxcnh4he2?key=86df214113d7b88f22964f48bff151e2"; // ضع هنا رابط الصفحة التي تريد توجيه الزائر إليها
+
+  // دالة لتحويل الزائر بعد مدة معينة
+  setTimeout(function() {
+    window.location.href = redirectUrl;
+  }, waitTime * 7000); // تحويل الثواني إلى ميلي ثانية
+</script>
+  </script>
     <script>
   // وقت الانتظار بالثواني
   var waitTime = 10; 
@@ -250,3 +218,4 @@
 </body>
 
 </html>
+
